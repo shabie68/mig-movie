@@ -8,6 +8,20 @@ async function defaultMovies() {
 defaultMovies()
 
 let unratedMovies = [];
+let sliderMovies = []
+
+function appendSliderMovies(movie) {
+
+	let container = document.createElement('div')
+	let title = document.createElement('h2')
+	let img = document.createElement('img')
+	title.innerHTML = movie.Title
+	img.src = movie.Poster !="N/A" ? movie.Poster : "file:///D:/new_life/mignon-movie/images/default.jpg"
+	container.appendChild(img)
+	container.appendChild(title)
+
+	document.querySelector(".slider").appendChild(container)
+}
 
 function appendMovies(id, movie) {
 	
@@ -37,9 +51,15 @@ function appendMovies(id, movie) {
 
 function loadMovies(movies) {
 	
-	movies.forEach((movie) => {
+	movies.forEach((movie, idx) => {
+		console.log(idx)
+		if(idx<4) {
+			appendSliderMovies(movie)
+		}
 		appendMovies('mig-load-movies', movie)
+		
 		showRating(movie)
+
 	})
 
 
