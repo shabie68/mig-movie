@@ -1,0 +1,8 @@
+1) When the page loads shows random 10 movies
+2) Search the movie
+3) Show the first rating for movie
+4) Rate the movie
+
+
+
+When something is search show 

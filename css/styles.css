@@ -1,0 +1,68 @@
+body {
+	background: black;
+	color: white;
+}
+
+
+.mig-px-12 {
+	padding: 0 12px;
+}
+
+#mig-header {
+	background-color: orange;
+	border-radius: 10px
+}
+
+.mig-flex {
+	display: flex;
+}
+
+.mig-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr)
+}
+
+.mig-w-full {
+	width: 100%;
+}
+
+.mig-justify-between {
+	justify-content: space-between;
+}
+
+input {
+	padding: 8px 16px;
+	border-radius: 10px;
+}
+
+.mig-relative {
+	position: relative;
+}
+
+.mig-absolute {
+	position: absolute;
+}
+
+.mig-top-8 {
+	top: 8px;
+}
+
+.mig-left-4 {
+	left: 4px;
+}
+
+.mig-align-center {
+	align-items: center
+}
+
+.mig-text-pink {
+	background-color: #ffc0cb8c;
+}
+
+.mig-brd-rad-10 {
+	border-radius: 10px
+}
+
+.mig-gap-12 {
+	gap: 12px;
+}
