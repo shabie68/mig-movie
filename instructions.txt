@@ -1,7 +1,8 @@
 1) When the page loads shows random 10 movies
 2) Search the movie
 3) Show the first rating for movie
-4) Rate the movie
+4) Show the ratings 
+5) Add the rating for movies that does not have any ratings
 
 
 
