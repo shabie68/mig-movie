@@ -7,6 +7,7 @@ async function defaultMovies() {
 
 defaultMovies()
 
+let unratedMovies = [];
 
 function appendMovies(id, movie) {
 	
@@ -40,14 +41,30 @@ function loadMovies(movies) {
 		appendMovies('mig-load-movies', movie)
 		showRating(movie)
 	})
+
+
 }
 
 async function showRating(movie) {
 	
 	let res = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=8e76539a`)
 	let rating = await res.json()
-	document.getElementById(`mig-rating-${movie.imdbID}`).innerHTML = "RATING: " + rating.Ratings[0]?.Value
-	console.log(rating)
+	let elem = document.getElementById(`mig-rating-${movie.imdbID}`)
+	elem.innerHTML = "RATING: " + rating.Ratings[0]?.Value
+
+	if(!rating.Ratings[0]) {
+
+		unratedMovies.push(movie)
+		let rateElement = document.createElement('input')
+		console.log(elem.closest("div"))
+		rateElement.id = `mig-rate-movie--${movie.imdbID}`
+
+		elem.closest("div").appendChild(rateElement)
+
+		rateElement.addEventListener('blur', addRating)
+		
+	}
+
 }
 
 async function searchMovies() {
@@ -63,6 +80,15 @@ async function searchMovies() {
 		appendMovies('mig-search-movies', movie)
 		showRating(movie)
 	})
+}
+
+function addRating(event) {
+	
+	let [, omdbapi] = event.target.id.split("--")
+	let id = `mig-rating-${omdbapi}`
+	document.getElementById(id).innerHTML ="RATINGS: " + event.target.value + " / 10"
+	document.getElementById(event.target.id).remove()
+
 }
 
 document.querySelector('input[type="search"]').addEventListener('blur', searchMovies)
