@@ -3,7 +3,19 @@
 3) Show the first rating for movie
 4) Show the ratings 
 5) Add the rating for movies that does not have any ratings
+6) Added slider
 
 
 
 When something is search show 
+
+
+Picture
+Title
+Des
+
+
+
+To fix
+
+Add card + border to movie elmenet
