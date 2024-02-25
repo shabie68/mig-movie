@@ -4,6 +4,7 @@
 4) Show the ratings 
 5) Add the rating for movies that does not have any ratings
 6) Added slider
+7)
 
 
 
@@ -15,7 +16,10 @@ Title
 Des
 
 
-
+color : black
 To fix
 
 Add card + border to movie elmenet
+
+Add scoail links
+write placeholder for rating input field

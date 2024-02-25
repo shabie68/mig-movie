@@ -42,7 +42,7 @@ function appendMovies(id, movie) {
 	cont.appendChild(title)
 	cont.appendChild(rating)
 
-	container.className = ''
+	container.className = 'mig-bg-green mig-br-10 mig-p-20'
 	container.appendChild(movieImg)
 	container.appendChild(cont)
 
@@ -70,12 +70,14 @@ async function showRating(movie) {
 	let res = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=8e76539a`)
 	let rating = await res.json()
 	let elem = document.getElementById(`mig-rating-${movie.imdbID}`)
-	elem.innerHTML = "RATING: " + rating.Ratings[0]?.Value
+	let total_rating = rating.Ratings[0] ? rating.Ratings[0].Value : ''
+	elem.innerHTML = "RATINGS: "+total_rating
 
 	if(!rating.Ratings[0]) {
 
 		unratedMovies.push(movie)
 		let rateElement = document.createElement('input')
+		rateElement.placeholder = 'Rate this movie'
 		console.log(elem.closest("div"))
 		rateElement.id = `mig-rate-movie--${movie.imdbID}`
 

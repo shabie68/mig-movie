@@ -43,6 +43,10 @@ input {
 	position: absolute;
 }
 
+.mig-br-10 img {
+	height: 275px
+}
+
 .mig-top-8 {
 	top: 8px;
 }
@@ -65,6 +69,31 @@ input {
 
 .mig-gap-12 {
 	gap: 12px;
+}
+
+.mig-bg-green {
+	background-color: #363232a8;
+}
+
+.mig-br-10 {
+	border-radius: 10px;
+}
+
+.mig-t-20 {
+	margin-top: 20px;
+}
+
+.mig-text-center {
+	text-align: center;
+}
+.mig-p-20 {
+	padding: 16px
+}
+.mig-bg-blue {
+	background-color: #001F3F
+}
+a {
+	text-decoration: none
 }
 
 *{box-sizing: border-box; -webkit-box-sizing: border-box; }
@@ -195,6 +224,7 @@ http://stackoverflow.com/a/34696029/383904
 #s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
 #s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
 /* More slides? Add here more rules */
+
 
 
 /* YOU'RE THE DESIGNER! 
